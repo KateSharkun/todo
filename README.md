@@ -13,6 +13,7 @@ So the whole workflow looks next way: first I create and edit code
 on my local machine, then add-commit-push it to the GitHub repo and it triggers a workflow that automatically connects via ssh to VPs and updates code based on repo changes -
 just as was requested in an assignment.
 
+I created a new user on VPS and set up config to allow authorise with a key.
 
 After that, everything was relatively easy besides small debugging for the wrong route in a bash script that made the pull request invalid, syntax errors in yaml file (dashes are important)
 organizing steps in the right order. As jobs are executed dependently in a chain there was no need for multiple jobs with dependencies for this exercise.
