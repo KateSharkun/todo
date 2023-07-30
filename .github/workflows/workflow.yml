@@ -9,7 +9,7 @@ on:
 
 jobs:
 
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
     - name: testing
@@ -17,30 +17,31 @@ jobs:
             actions/setup-python@v2
       run: pip install -r requirements.txt  
            python test_main.py
-        if: steps.testing.outcome == 'success'
-        steps:
-          - name: Configure SSH
-            run: |
-              mkdir -p ~/.ssh/
-              echo "$SSH_KEY" > ~/.ssh/staging.key
-              chmod 600 ~/.ssh/staging.key
-              cat >>~/.ssh/config <<END
-              Host staging
-                  HostName $SSH_HOST
-                  User $SSH_USER
-                  IdentityFile ~/.ssh/staging.key
-                  StrictHostKeyChecking no
-                  PubkeyAuthentication yes 
-              END
-            env:
-              SSH_USER: ${{ secrets.SSH_USER }}
-              SSH_KEY: ${{ secrets.SSH_KEY }}
-              SSH_HOST: ${{ secrets.SSH_HOST }}
-              
-            - name: Git pull and app restart
-              run: ssh staging 'cmnd.sh'
-  
-  
+  deploy:
+    needs: [test]
+    steps:
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_KEY" > ~/.ssh/staging.key
+          chmod 600 ~/.ssh/staging.key
+          cat >>~/.ssh/config <<END
+          Host staging
+              HostName $SSH_HOST
+              User $SSH_USER
+              IdentityFile ~/.ssh/staging.key
+              StrictHostKeyChecking no
+              PubkeyAuthentication yes 
+          END
+        env:
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_KEY: ${{ secrets.SSH_KEY }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+
+        - name: Git pull and app restart
+          run: ssh staging 'cmnd.sh'
+
+
 
 
 
