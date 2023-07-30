@@ -40,7 +40,7 @@ jobs:
           SSH_HOST: ${{ secrets.SSH_HOST }}
 
     - name: Git pull and app restart
-      run: ssh staging 'cmnd.sh'
+      run: ssh staging 'chmod cmnd.sh'
 
 
 
