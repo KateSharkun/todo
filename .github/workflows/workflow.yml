@@ -15,7 +15,7 @@ jobs:
     - name: test
     - uses: actions/checkout@v2
             actions/setup-python@v2
-    - run: pip install -r requirements.txt  
+      run: pip install -r requirements.txt  
            python test_main.py
   deploy:
     needs: [test]
