@@ -1,6 +1,6 @@
 # CI/CD pipeline implementation
-
-To create a CI/CD pipeline I decided to take small steps and started by establishing a ssh connection between my local pc and VPS. 
+[!['Workflow status'](https://github.com/KateSharkun/my-project/actions/workflows/hello.yml/badge.svg)
+](https://github.com/KateSharkun/todo/actions/workflows/workflow.yml/badge.svg)To create a CI/CD pipeline I decided to take small steps and started by establishing a ssh connection between my local pc and VPS. 
 It gave a clear understanding of how the connection works and showed its benefits.
 So I decided not to use premade GitHub actions like appleboy/ssh-action and found a great tutorial on creating a pure ssh connection
 with VPS using alias (source:https://blog.benoitblanchon.fr/github-action-run-ssh-commands/) What it does is creates a folder on a runner and writes private key, 
