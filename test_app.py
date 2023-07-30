@@ -19,7 +19,7 @@ def client(app):
 
 def test_index(client):
     response = client.get('/')
-    assert b'Hi' in response.data
+    assert b'Lorem ipsum' in response.data
 
 
 

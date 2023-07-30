@@ -12,12 +12,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: installations
+    - name: testing
       uses: actions/checkout@v2
             actions/setup-python@v2
       run: pip install -r requirements.txt  
            python test_main.py
-        if: ${{ success() }}
+        if: steps.testing.outcome == 'success'
         steps:
           - name: Configure SSH
             run: |
