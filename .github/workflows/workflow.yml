@@ -17,9 +17,10 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: '3.10' 
-    - name: tests
+    - name: install requirements
       run: pip install -r requirements.txt
-           python test_main.py
+    - name: test
+      run: python test_main.py
     - name: Configure SSH
       run: |
           mkdir -p ~/.ssh/
