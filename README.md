@@ -1,4 +1,5 @@
-[!['Workflow status'](https://github.com/KateSharkun/todo/actions/workflows/workflow.yml/badge.svg)]# CI/CD pipeline implementation
+!['Workflow status'](https://github.com/KateSharkun/todo/actions/workflows/workflow.yml/badge.svg)
+# CI/CD pipeline implementation
 To create a CI/CD pipeline I decided to take small steps and started by establishing a ssh connection between my local pc and VPS. 
 It gave a clear understanding of how the connection works and showed its benefits.
 So I decided not to use premade GitHub actions like appleboy/ssh-action and found a great tutorial on creating a pure ssh connection
