@@ -20,7 +20,7 @@ jobs:
     - name: install requirements
       run: pip install -r requirements.txt
     - name: test
-      run: python test_main.py
+      run: python test_app.py
     - name: Configure SSH
       run: |
           mkdir -p ~/.ssh/
