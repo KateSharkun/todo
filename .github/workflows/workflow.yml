@@ -19,6 +19,7 @@ jobs:
            python test_main.py
   deploy:
     needs: [test]
+    runs-on: ubuntu-latest
     steps:
       - name: Configure SSH
         run: |
