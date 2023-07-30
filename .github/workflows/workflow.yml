@@ -12,7 +12,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - name: testing
+    - name: test
       uses: actions/checkout@v2
             actions/setup-python@v2
       run: pip install -r requirements.txt  
@@ -39,8 +39,8 @@ jobs:
           SSH_KEY: ${{ secrets.SSH_KEY }}
           SSH_HOST: ${{ secrets.SSH_HOST }}
 
-        - name: Git pull and app restart
-          run: ssh staging 'cmnd.sh'
+      - name: Git pull and app restart
+        run: ssh staging 'cmnd.sh'
 
 
 
