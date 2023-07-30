@@ -13,10 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: test
-    - uses: actions/checkout@v2
-            actions/setup-python@v2
-      run: pip install -r requirements.txt  
+      run: pip install -r requirements.txt
            python test_main.py
+      uses: actions/checkout@v2
+            actions/setup-python@v2
+
   deploy:
     needs: [test]
     runs-on: ubuntu-latest
