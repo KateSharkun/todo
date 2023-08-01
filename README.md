@@ -15,6 +15,5 @@ just as was requested in an assignment.
 
 I created a new user on VPS and set up config to allow authorise with a key.
 
-After that, everything was relatively easy besides small debugging for the wrong route in a bash script that made the pull request invalid, syntax errors in yaml file (formatting is still important)
-organizing steps in the right order. As jobs are executed dependently in a chain there was no need for multiple jobs with dependencies for this exercise.
+After that, everything was relatively easy besides small debugging for the wrong route in a bash script that made the pull request invalid, formatting errors in yaml file while organizing steps and runs in the right order. As jobs are executed dependently in a chain there was no need for multiple jobs with dependencies for this exercise.
 
